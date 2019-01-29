@@ -42,14 +42,18 @@ public class budgetService {
     }
 
     public Month[] provideMonths() {
+        return new Month[0];
     }
 
     public Month[] updateCategoriesValues(String id, int body) {
+        return new Month[0];
     }
 
-    public Month[] updateMonthValues(String id, int body) {
+    public Month[] updateMonthValues(Month[] body) {
+        return new Month[0];
     }
 
     public Month[] addNewSpending(String id, String name, int body) {
+        return new Month[0];
     }
 }

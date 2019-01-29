@@ -10,6 +10,9 @@ public class Spending implements Serializable {
     public String desc;
     public String day;
 
+    public Spending() {
+    }
+
     public Spending(String spendingId, Integer cost, String spendingName, String desc, String day){
         this.spendingId = spendingId;
         this.cost = cost;

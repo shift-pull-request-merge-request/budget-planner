@@ -1,0 +1,30 @@
+{
+  "months": [
+    {
+      "monthId": "01",
+      "value": 10000,
+      "category": [
+        {
+          "categoryName": "food",
+          "categoryValue": 1000,
+          "spending": [
+            {
+              "spendingId": "1",
+              "cost": 50,
+              "spendingName": "Coke",
+              "desc": "bottle of Coke",
+              "day": "5"
+            },
+            {
+              "spendingId": "2",
+              "cost": 500,
+              "spendingName": "Vodka",
+              "desc": "litter of vodka",
+              "day": "10"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

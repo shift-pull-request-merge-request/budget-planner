@@ -8,6 +8,9 @@ public class Category implements Serializable{
     public Integer categoryValue;
     public Spending spending[];
 
+    public Category() {
+    }
+
     public Category(String categoryName, Integer categoryValue, Spending[] spending){
         this.categoryName = categoryName;
         this.categoryValue = categoryValue;

@@ -8,6 +8,9 @@ public class Month implements Serializable {
     public Integer value;
     public Category category[];
 
+    public Month() {
+    }
+
     public Month(String monthId, Integer value, Category[] categories){
         this.monthId = monthId;
         this.value = value;
