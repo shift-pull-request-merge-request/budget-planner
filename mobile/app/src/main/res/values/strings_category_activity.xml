@@ -1,0 +1,24 @@
+<resources>
+    <string name="arrow_left">&lt;</string>
+    <string name="arrow_right">&gt;</string>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
+    <string name="addSpend">Добавить трату</string>
+
+    <string-array name="month_array">
+        <item>январь</item>
+        <item>февраль</item>
+        <item>март</item>
+        <item>апрель</item>
+        <item>май</item>
+        <item>июнь</item>
+        <item>июль</item>
+        <item>август</item>
+        <item>сентябрь</item>
+        <item>октябрь</item>
+        <item>ноябрь</item>
+        <item>декабрь</item>
+    </string-array>
+</resources>

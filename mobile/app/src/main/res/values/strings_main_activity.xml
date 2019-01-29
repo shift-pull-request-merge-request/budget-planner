@@ -1,0 +1,12 @@
+<resources>
+    <string name="balance_string">Не распределено:</string>
+
+    <string-array name="standard_category_array">
+        <item>Продукты</item>
+        <item>Рестораны и кафе</item>
+        <item>Транспорт</item>
+        <item>ЖКХ, связь, интернет</item>
+        <item>Развлечения</item>
+        <item>Покупки</item>
+    </string-array>
+</resources>
