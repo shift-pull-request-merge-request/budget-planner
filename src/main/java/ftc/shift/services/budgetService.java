@@ -1,5 +1,6 @@
 package ftc.shift.services;
 
+import ftc.shift.models.Month;
 import ftc.shift.repositories.Repository;
 import ftc.shift.models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,4 +41,15 @@ public class budgetService {
         return repository.getAllBooks();
     }
 
+    public Month[] provideMonths() {
+    }
+
+    public Month[] updateCategoriesValues(String id, int body) {
+    }
+
+    public Month[] updateMonthValues(String id, int body) {
+    }
+
+    public Month[] addNewSpending(String id, String name, int body) {
+    }
 }
