@@ -15,8 +15,15 @@
 *.nar
 *.ear
 *.zip
+*.idea
+settings.gradle
+gradle
 *.tar.gz
 *.rar
+gradlew.bat
+gradlew
+out
+postman
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
