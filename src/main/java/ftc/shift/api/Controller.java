@@ -2,7 +2,7 @@ package ftc.shift.api;
 
 
 import ftc.shift.models.Book;
-import ftc.shift.services.Service;
+import ftc.shift.services.budgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,18 +15,7 @@ public class Controller {
     private static final String MONTHS_PATH = "/api/months";
 
     @Autowired
-    private Service service;
-//
-//    @GetMapping(MONTHS_PATH + "/{id}")
-//    public ResponseEntity<Book> readBook(@PathVariable String id) {
-//        Book book = service.provideBook(id);
-//
-//        if (null == book) {
-//            return ResponseEntity.notFound().build();
-//        } else {
-//            return ResponseEntity.ok(book);
-//        }
-//    }
+    private budgetService service;
 
     @GetMapping(MONTHS_PATH)                                //update month money value
     public ResponseEntity<Collection<Book>> listBooks() {

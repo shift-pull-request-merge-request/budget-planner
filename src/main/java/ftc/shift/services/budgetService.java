@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 
 @Service
-public class Service {
+public class budgetService {
 
     private final Repository repository;
 
     @Autowired
-    public Service(Repository repository) {
+    public budgetService(Repository repository) {
         this.repository = repository;
     }
 
