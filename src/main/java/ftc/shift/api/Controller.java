@@ -2,7 +2,7 @@ package ftc.shift.api;
 
 
 import ftc.shift.models.Book;
-import ftc.shift.services.BookService;
+import ftc.shift.services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,43 +12,37 @@ import java.util.Collection;
 @RestController
 public class Controller {
 
-    private static final String BOOKS_PATH = "/api/v001/books";
+    private static final String MONTHS_PATH = "/api/months";
 
     @Autowired
-    private BookService service;
+    private Service service;
+//
+//    @GetMapping(MONTHS_PATH + "/{id}")
+//    public ResponseEntity<Book> readBook(@PathVariable String id) {
+//        Book book = service.provideBook(id);
+//
+//        if (null == book) {
+//            return ResponseEntity.notFound().build();
+//        } else {
+//            return ResponseEntity.ok(book);
+//        }
+//    }
 
-    @GetMapping(BOOKS_PATH + "/{id}")
-    public ResponseEntity<Book> readBook(@PathVariable String id) {
-        Book book = service.provideBook(id);
-
-        if (null == book) {
-            return ResponseEntity.notFound().build();
-        } else {
-            return ResponseEntity.ok(book);
-        }
-    }
-
-    @GetMapping(BOOKS_PATH)
+    @GetMapping(MONTHS_PATH)                                //update month money value
     public ResponseEntity<Collection<Book>> listBooks() {
         Collection<Book> books = service.provideBooks();
         return ResponseEntity.ok(books);
     }
 
-    @PostMapping(BOOKS_PATH)
-    public ResponseEntity<Book> createBook(@RequestBody Book book) {
-        Book result = service.createBook(book);
+    @PatchMapping(MONTHS_PATH + "/{id}")                    //update month categories values
+    public ResponseEntity<Book> updateMonthValue(@PathVariable String id, @RequestBody int val) {
+        Month[] result = service.updateBook(book);
         return ResponseEntity.ok(result);
     }
 
-    @DeleteMapping(BOOKS_PATH + "/{id}")
-    public ResponseEntity<?> deleteBook(@PathVariable String id) {
-        service.deleteBook(id);
-        return ResponseEntity.ok().build(); //нет тела, только статус
-    }
-
-    @PatchMapping(BOOKS_PATH + "/{id}")
-    public ResponseEntity<Book> updateBook(@PathVariable String id, @RequestBody Book book) {
-        Book result = service.updateBook(book);
+    @PatchMapping(MONTHS_PATH + "/{id}/{name}")             //add new spending
+    public ResponseEntity<Book> updateMonthValue(@PathVariable String id, @PathVariable String name) {
+//        Book result = service.updateBook(book);
         return ResponseEntity.ok(result);
     }
 }
