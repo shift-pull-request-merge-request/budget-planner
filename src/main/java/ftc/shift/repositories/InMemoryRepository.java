@@ -1,7 +1,6 @@
-package ftc.shift.sample.repositories;
+package ftc.shift.repositories;
 
-import ftc.shift.sample.models.Book;
-import org.springframework.stereotype.Repository;
+import ftc.shift.models.Book;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -11,12 +10,12 @@ import java.util.Map;
 /**
  * Реализиция, хранящая все данные в памяти приложения
  */
-@Repository
-public class InMemoryBookRepository implements BookRepository {
+@org.springframework.stereotype.Repository
+public class InMemoryRepository implements Repository {
 
     private Map<String, Book> bookCache = new HashMap<>();
 
-    public InMemoryBookRepository() {
+    public InMemoryRepository() {
         bookCache.put("1", new Book("1", "Название 1", "Автор Авторович", 12,
                 false, Collections.singletonList("Фантастика")));
         bookCache.put("2", new Book("2", "Название 2", "Автор Писателевич", 1000,

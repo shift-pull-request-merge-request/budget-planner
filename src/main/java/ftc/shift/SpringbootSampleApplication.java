@@ -1,4 +1,4 @@
-package ftc.shift.sample;
+package ftc.shift;
 
 
 import org.springframework.boot.SpringApplication;

@@ -1,13 +1,13 @@
-package ftc.shift.sample.repositories;
+package ftc.shift.repositories;
 
-import ftc.shift.sample.models.Book;
+import ftc.shift.models.Book;
 
 import java.util.Collection;
 
 /**
  * Интерфейс для получения данных по книгам
  */
-public interface BookRepository {
+public interface Repository {
 
     Book fetchBook(String id);
 

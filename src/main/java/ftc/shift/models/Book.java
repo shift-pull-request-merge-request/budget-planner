@@ -1,4 +1,4 @@
-package ftc.shift.sample.models;
+package ftc.shift.models;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,7 +1,7 @@
-package ftc.shift.sample.services;
+package ftc.shift.services;
 
-import ftc.shift.sample.models.Book;
-import ftc.shift.sample.repositories.BookRepository;
+import ftc.shift.repositories.Repository;
+import ftc.shift.models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,34 +10,34 @@ import java.util.Collection;
 @Service
 public class BookService {
 
-    private final BookRepository bookRepository;
+    private final Repository repository;
 
     @Autowired
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public BookService(Repository repository) {
+        this.repository = repository;
     }
 
     public Book provideBook(String id) {
-        return bookRepository.fetchBook(id);
+        return repository.fetchBook(id);
     }
 
     public Book updateBook(Book book) {
-        bookRepository.updateBook(book);
+        repository.updateBook(book);
         return book;
     }
 
     public void deleteBook(String id) {
-        bookRepository.deleteBook(id);
+        repository.deleteBook(id);
     }
 
 
     public Book createBook(Book book) {
-        bookRepository.createBook(book);
+        repository.createBook(book);
         return book;
     }
 
     public Collection<Book> provideBooks() {
-        return bookRepository.getAllBooks();
+        return repository.getAllBooks();
     }
 
 }

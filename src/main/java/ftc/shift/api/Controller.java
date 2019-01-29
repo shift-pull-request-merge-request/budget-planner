@@ -1,8 +1,8 @@
-package ftc.shift.sample.api;
+package ftc.shift.api;
 
 
-import ftc.shift.sample.models.Book;
-import ftc.shift.sample.services.BookService;
+import ftc.shift.models.Book;
+import ftc.shift.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-public class BooksController {
+public class Controller {
 
     private static final String BOOKS_PATH = "/api/v001/books";
 
