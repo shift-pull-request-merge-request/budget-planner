@@ -16,8 +16,10 @@
 *.ear
 *.zip
 *.idea
+*.xml
 settings.gradle
 gradle
+.gradle
 *.tar.gz
 *.rar
 gradlew.bat
