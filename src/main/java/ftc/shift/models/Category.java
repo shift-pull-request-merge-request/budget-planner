@@ -1,12 +1,12 @@
 package ftc.shift.models;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Category implements Serializable{
     private CategoryName name;
     private int balance;
-    private Spending spendingHistory[];
+    private ArrayList<Spending> spendingHistory;
 
     public CategoryName getName() {
         return name;
@@ -24,18 +24,15 @@ public class Category implements Serializable{
         this.balance = balance;
     }
 
-    public Spending[] getSpendingHistory() {
+    public ArrayList<Spending> getSpendingHistory() {
         return spendingHistory;
     }
 
-    public void setSpendingHistory(Spending[] spendingHistory) {
-        this.spendingHistory = spendingHistory;
-    }
-
     public Category() {
+        spendingHistory = new ArrayList<>();
     }
 
-    public Category(CategoryName name, int balance, Spending[] spendingHistory){
+    public Category(CategoryName name, int balance, ArrayList<Spending> spendingHistory){
         this.name = name;
         this.balance = balance;
         this.spendingHistory = spendingHistory;

@@ -4,43 +4,55 @@ import ftc.shift.models.Category;
 import ftc.shift.models.CategoryName;
 import ftc.shift.models.Month;
 import ftc.shift.models.Spending;
+import org.springframework.stereotype.Repository;
 
-@org.springframework.stereotype.Repository
+
+@Repository
 public class InMemoryBudgetRepository {
 
-    //private Map<String, Months> bugdetCache = new HashMap<>();
+    private static int MONTH_NUM = 12;
+    private static int CATEGORIES_NUM = 6;
 
     private Month[] months;
 
     public InMemoryBudgetRepository() {
-        months = new Month[12];
-        for (int i = 0; i < 12; i++) {
-            months[i] = new Month(i + 1, 0, new Category[6]);
-            for (int j = 0; j < 6; j++) {
-                //months[i].
+        months = new Month[MONTH_NUM];
+        for (int i = 0; i < MONTH_NUM; i++) {
+            months[i] = new Month(i + 1, 0, new Category[CATEGORIES_NUM]);
+            for (int j = 0; j < CATEGORIES_NUM; j++) {
+                months[i].getCategories()[j] = new Category();
+                months[i].getCategories()[j].setName(CategoryName.values()[j]);
             }
         }
     }
 
     public Month getMonthById(int id) {
-        if (id > 12 || id < 1)
+        if (id > MONTH_NUM || id < 1)
             return null;
         else return months[id - 1];
     }
 
     public Month updateBalance(int id, int balance) {
-        months[id - 1].balance = balance;
+        months[id - 1].setBalance(balance);
         return months[id - 1];
     }
 
-    public Month updateCategoryBalance(int id, String categoryName, int balance) {
-        Category category = months[id - 1].getCategories()[CategoryName.valueOf(categoryName).getId()];
-        category.setBalance(balance);
+    public Month updateCategoryBalance(int id, String categoryName, int categoryBalance) {
+        if (months[id - 1].getBalance() < categoryBalance) return null;
+        Category category = months[id - 1].getCategories()[CategoryName.valueOf(categoryName.toUpperCase()).getId()];
+        months[id - 1].setBalance(months[id - 1].getBalance() - categoryBalance);
+        category.setBalance(categoryBalance);
         return months[id - 1];
     }
 
     public Month
-    updateCategorySpending(int monthId, String category, Spending body) {
-        return null;
+    updateCategorySpending(int monthId, String categoryName, Spending body) {
+        Month month = months[monthId - 1];
+        Category category = month.getCategories()[CategoryName.valueOf(categoryName.toUpperCase()).getId()];
+        if (category.getBalance() < body.getCost()) return null;
+        category.setBalance(category.getBalance() - body.getCost());
+        body.setId(category.getSpendingHistory().size() + 1);
+        category.getSpendingHistory().add(body);
+        return month;
     }
 }

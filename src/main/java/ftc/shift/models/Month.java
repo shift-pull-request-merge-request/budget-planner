@@ -1,11 +1,10 @@
 package ftc.shift.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Month implements Serializable {
-    public int monthId;
-    public Integer balance;
+    private int monthId;
+    private Integer balance;
     private Category[] categories;
 
     public int getMonthId() {

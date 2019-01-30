@@ -1,10 +1,9 @@
 package ftc.shift.api;
 
 
-import ftc.shift.models.Category;
 import ftc.shift.models.Month;
 import ftc.shift.models.Spending;
-import ftc.shift.services.budgetService;
+import ftc.shift.services.BudgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +13,12 @@ public class Controller {
 
     private static final String MONTHS_PATH = "/api/months";
 
+    private final BudgetService service;
+
     @Autowired
-    private budgetService service;
+    public Controller(BudgetService service) {
+        this.service = service;
+    }
 
     @GetMapping(MONTHS_PATH + "/{id}")
     public ResponseEntity<Month> getMonthById(@PathVariable int id) {
@@ -24,8 +27,8 @@ public class Controller {
     }
 
     @PatchMapping(MONTHS_PATH + "/{monthId}/{balance}")
-    public ResponseEntity<Month> addMonthBalance(@PathVariable int id, @PathVariable int balance, @RequestBody Month body) {
-        Month month = service.addMonthBalance(id, balance);
+    public ResponseEntity<Month> addMonthBalance(@PathVariable int monthId, @PathVariable int balance, @RequestBody Month body) {
+        Month month = service.addMonthBalance(monthId, balance);
         return ResponseEntity.ok(month);
     }
 
@@ -35,9 +38,9 @@ public class Controller {
         return ResponseEntity.ok(month);
     }
 
-    @PatchMapping(MONTHS_PATH + "/{monthId}/category/{categoryId}")
-    public ResponseEntity<Month> addNewSpending(@PathVariable int monthId, @PathVariable String categoryId, @RequestBody Spending body) {
-        Month month = service.updateCategoriesSpending(monthId, categoryId, body);
+    @PatchMapping(MONTHS_PATH + "/{monthId}/category/{categoryName}")
+    public ResponseEntity<Month> addNewSpending(@PathVariable int monthId, @PathVariable String categoryName, @RequestBody Spending body) {
+        Month month = service.updateCategoriesSpending(monthId, categoryName, body);
         return ResponseEntity.ok(month);
     }
 

@@ -50,6 +50,5 @@ public enum CategoryName {
         }
     };
 
-
     public abstract int getId();
     }
