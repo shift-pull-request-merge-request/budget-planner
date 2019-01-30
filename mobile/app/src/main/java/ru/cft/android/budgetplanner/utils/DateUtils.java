@@ -14,6 +14,11 @@ public class DateUtils {
         return new DateFormatSymbols().getMonths()[calendar.get(Calendar.MONTH)];
     }
 
+    public static int getCurrentMonth() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.MONTH);
+    }
+
     public static int getCurrentDay() {
         Calendar calendar = Calendar.getInstance();
         return calendar.get(Calendar.DAY_OF_MONTH);
