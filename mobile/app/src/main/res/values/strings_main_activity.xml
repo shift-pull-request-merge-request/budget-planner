@@ -1,5 +1,5 @@
 <resources>
-    <string name="balance_string">Не распределено:</string>
+    <string name="balance_string">Остаток на кошельке:</string>
 
     <string-array name="standard_category_array">
         <item>Продукты</item>

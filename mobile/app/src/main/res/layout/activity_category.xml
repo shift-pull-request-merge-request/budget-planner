@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
@@ -11,13 +12,13 @@
     <TextView
         android:id="@+id/textViewCurrentCategory"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:orientation="horizontal"
         android:gravity="top|center">
 
@@ -43,13 +44,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:orientation="horizontal"
         android:gravity="top|center">
 
         <Button
             android:id="@+id/buttonBalanceInCurrentCategoryMinus"
+            android:onClick="buttonBalanceMinusClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/minus" />
@@ -61,10 +61,39 @@
 
         <Button
             android:id="@+id/buttonBalanceInCurrentCategoryPlus"
+            android:onClick="buttonBalancePlusClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/plus" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="top|center">
+
+        <EditText
+            android:id="@+id/editTextEditBalanceInCurrentCategory"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/edit_balance_in_current_category_hint"
+            android:inputType="number"
+            android:visibility="gone"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/buttonEditBalanceInCurrentCategory"
+            android:onClick="buttonEditBalanceInCurrentCategoryClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:text="@string/edit_balance_in_current_category"
+            />
     </LinearLayout>
 
     <Button

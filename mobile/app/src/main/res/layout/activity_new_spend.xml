@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
@@ -9,31 +10,46 @@
     android:gravity="top|center">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_spend_activity_name"
+        android:textSize="30sp"
+        android:gravity="center" />
+
+    <TextView
         android:id="@+id/textViewCurrentCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextSpendSum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="@string/new_spend_activity_spend_hint"
+        android:inputType="number"
+        tools:ignore="Autofill" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextSpendName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="@string/new_spend_activity_name_hint"
+        tools:ignore="Autofill" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextSpendDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number" />
+        android:inputType="textPersonName"
+        android:hint="@string/new_spend_activity_description_hint"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/buttonAddSpend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonAddSpendClick"
+        android:text="@string/new_spend_activity_button_add_spend" />
 
 </LinearLayout>

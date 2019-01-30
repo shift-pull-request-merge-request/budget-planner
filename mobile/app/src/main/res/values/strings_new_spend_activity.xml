@@ -1,0 +1,7 @@
+<resources>
+    <string name="new_spend_activity_name">Добавить трату</string>
+    <string name="new_spend_activity_name_hint">Введите название траты</string>
+    <string name="new_spend_activity_description_hint">Введите описание траты</string>
+    <string name="new_spend_activity_spend_hint">Введите сумму</string>
+    <string name="new_spend_activity_button_add_spend">Добавить</string>
+</resources>

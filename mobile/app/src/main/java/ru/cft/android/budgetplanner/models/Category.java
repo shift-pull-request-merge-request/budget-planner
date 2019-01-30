@@ -1,15 +1,27 @@
 package ru.cft.android.budgetplanner.models;
 
-import java.io.Serializable;
+public class Category {
 
-public class Category implements Serializable {
-    public String categoryName;
-    public Integer categoryValue;
-    public Spending spending[];
+    private CategoryName name;
+    private int balance;
+    private Spending[] spendingHistory;
 
-    public Category(String categoryName, Integer categoryValue, Spending[] spending) {
-        this.categoryName = categoryName;
-        this.categoryValue = categoryValue;
-        this.spending = spending;
+    public Category(CategoryName name, int balance, Spending[] spendingHistory) {
+        this.name = name;
+        this.balance = balance;
+        this.spendingHistory = spendingHistory;
     }
+
+    public CategoryName getName() {
+        return name;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public Spending[] getSpendingHistory() {
+        return spendingHistory;
+    }
+
 }

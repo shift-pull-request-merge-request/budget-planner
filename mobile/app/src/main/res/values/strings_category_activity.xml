@@ -7,6 +7,11 @@
 
     <string name="addSpend">Добавить трату</string>
 
+    <string name="edit_balance_in_current_category_hint">Введите сумму</string>
+    <string name="edit_balance_in_current_category">Изменить</string>
+
+    <string name="balance">Баланс:</string>
+
     <string-array name="month_array">
         <item>январь</item>
         <item>февраль</item>

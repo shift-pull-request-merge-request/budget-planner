@@ -1,18 +1,26 @@
 package ru.cft.android.budgetplanner.models;
 
-import java.io.Serializable;
-import java.util.List;
+public class Month {
 
-public class Month implements Serializable {
-    public String monthId;
-    public Integer value;
-    public Category category[];
+    private int monthId;
+    private int balance;
+    private Category[] category;
 
-    public Month(String monthId, Integer value, Category[] categories) {
+    public Month(int monthId, int balance, Category[] categories) {
         this.monthId = monthId;
-        this.value = value;
+        this.balance = balance;
         this.category = categories;
     }
 
+    public int getMonthId() {
+        return monthId;
+    }
 
+    public int getBalance() {
+        return balance;
+    }
+
+    public Category[] getCategory() {
+        return category;
+    }
 }
