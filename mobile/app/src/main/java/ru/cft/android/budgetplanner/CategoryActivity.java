@@ -44,7 +44,7 @@ public class CategoryActivity extends Activity {
         CATEGORIES_ID.put(CategoryName.PURCHASE, 5);
     }
 
-    CategoryActivity() {
+    public CategoryActivity() {
         gson = new GsonBuilder().setPrettyPrinting().create();
     }
 

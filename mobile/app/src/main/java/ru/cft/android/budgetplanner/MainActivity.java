@@ -3,6 +3,7 @@ package ru.cft.android.budgetplanner;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,11 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.IOException;
 import java.util.Arrays;
 
+import retrofit2.Response;
+import ru.cft.android.budgetplanner.api.RetrofitApi;
 import ru.cft.android.budgetplanner.models.Month;
 
 public class MainActivity extends ListActivity {
@@ -25,7 +29,7 @@ public class MainActivity extends ListActivity {
 
     private TextView textViewBalance;
 
-    MainActivity() {
+    public MainActivity() {
         gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
@@ -63,6 +67,14 @@ public class MainActivity extends ListActivity {
     }
 
     private void setBalance() {
+        try {
+            Response response = RetrofitApi.getApi().getData(1).execute();
+            Log.i("qwerty", "" + response.code());
+            Log.i("qwerty", "" + response.body().toString());
+
+        } catch (IOException e) {
+            Log.e("exception", e.getMessage());
+        }
         balance = gson.fromJson(JSON, Month.class).getBalance();
         String balanceText = getResources().getString(R.string.balance_string) + " " + balance;
         textViewBalance.setText(balanceText);
