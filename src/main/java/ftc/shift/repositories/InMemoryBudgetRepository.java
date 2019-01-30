@@ -13,7 +13,7 @@ public class InMemoryBudgetRepository {
     public InMemoryBudgetRepository() {
         months = new Month[12];
         for (int i = 0; i < 12; i++) {
-            months[i] = new Month(i+1, -1, new Category[6]);
+            months[i] = new Month(i+1, 0, new Category[6]);
             for (int j =0; j<6; j++){
                 //months[i].
             }

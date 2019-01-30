@@ -30,19 +30,19 @@ public class Controller {
         return ResponseEntity.ok(body);
     }
 
-    @PatchMapping(MONTHS_PATH + "/{id}")                    //TODO: update month categories values
-    public ResponseEntity<Month> updateCategoriesValues(@PathVariable int id, @RequestBody Month body) {
+    @PatchMapping(MONTHS_PATH + "/{monthId}/category/{categoryName}/{balance}")                    //TODO: update month categories values
+    public ResponseEntity<Month> updateCategoriesValues(@PathVariable int monthId, @PathVariable String categoryName, @PathVariable int balance, @RequestBody Month body) {
         //Months result = service.updateCategoriesValues(id, body);
         //return ResponseEntity.ok(result);
         return null;
     }
 
-//    @PatchMapping(MONTHS_PATH + "/{id}/{name}")             //TODO: add new spending
-//    public ResponseEntity<Month> addNewSpending(@PathVariable int id, @PathVariable String name, @RequestBody Month body) {
-//        //onths result = service.addNewSpending(id, name, body);
-//        //return ResponseEntity.ok(result);
-//        return null;
-//    }
+    @PatchMapping(MONTHS_PATH + "/{id}/category/{categoryId}")             //TODO: add new spending
+    public ResponseEntity<Month> addNewSpending(@PathVariable int id, @PathVariable String categoryId, @RequestBody Month body) {
+        //onths result = service.addNewSpending(id, name, body);
+        //return ResponseEntity.ok(result);
+        return ResponseEntity.ok(new Month(10, 1000, null));
+    }
 
     @PatchMapping(MONTHS_PATH + "/{id}/{balance}")             //TODO: add new spending
     public ResponseEntity<Month> addNewSpending(@PathVariable int id, @PathVariable int balance, @RequestBody Month body) {
