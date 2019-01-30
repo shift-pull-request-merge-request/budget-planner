@@ -38,14 +38,14 @@ public class Controller {
         return ResponseEntity.ok(body);
     }
 
-    @PatchMapping(MONTHS_PATH + "/{id}")                    //update month categories values
+    @PatchMapping(MONTHS_PATH + "/{id}")                    //TODO: update month categories values
     public ResponseEntity<Months> updateCategoriesValues(@PathVariable String id, @RequestBody Months body) {
         //Months result = service.updateCategoriesValues(id, body);
         //return ResponseEntity.ok(result);
         return null;
     }
 
-    @PatchMapping(MONTHS_PATH + "/{id}/{name}")             //add new spending
+    @PatchMapping(MONTHS_PATH + "/{id}/{name}")             //TODO: add new spending
     public ResponseEntity<Months> addNewSpending(@PathVariable String id, @PathVariable String name, @RequestBody Months body) {
         //onths result = service.addNewSpending(id, name, body);
         //return ResponseEntity.ok(result);

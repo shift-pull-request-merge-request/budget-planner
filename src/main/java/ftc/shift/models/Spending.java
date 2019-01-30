@@ -1,7 +1,6 @@
 package ftc.shift.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Spending implements Serializable {
     public String spendingId;
@@ -13,7 +12,7 @@ public class Spending implements Serializable {
     public Spending() {
     }
 
-    public Spending(String spendingId, Integer cost, String spendingName, String desc, String day){
+    public Spending(String spendingId, Integer cost, String spendingName, String desc, String day) {
         this.spendingId = spendingId;
         this.cost = cost;
         this.spendingName = spendingName;
@@ -21,7 +20,7 @@ public class Spending implements Serializable {
         this.day = day;
     }
 
-    public void setSpending (String spendingId, Integer cost, String spendingName, String desc, String day){
+    public void setSpending(String spendingId, Integer cost, String spendingName, String desc, String day) {
         this.spendingId = spendingId;
         this.cost = cost;
         this.spendingName = spendingName;

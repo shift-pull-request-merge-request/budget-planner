@@ -6,7 +6,7 @@ import java.util.List;
 public class Category implements Serializable{
     public String categoryName;
     public Integer categoryValue;
-    public Spending spending[];
+    public Spending spendings[];
 
     public Category() {
     }
@@ -14,7 +14,7 @@ public class Category implements Serializable{
     public Category(String categoryName, Integer categoryValue, Spending[] spending){
         this.categoryName = categoryName;
         this.categoryValue = categoryValue;
-        this.spending = spending;
+        this.spendings = spending;
     }
 
     public void setCategoryValue (Integer categoryValue) {this.categoryValue = categoryValue;}

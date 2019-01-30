@@ -1,12 +1,14 @@
 package ftc.shift.models;
 
 import java.io.Serializable;
-import ftc.shift.models.Month;
 
 public class Months implements Serializable {
-    public Month[] month;
+    public Month[] months;
+
+    public Months() {
+    }
 
     public Months(Month month[]) {
-        this.month = month;
+        this.months = month;
     }
 }

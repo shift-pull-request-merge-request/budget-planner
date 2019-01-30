@@ -6,7 +6,7 @@ import java.util.List;
 public class Month implements Serializable {
     public String monthId;
     public Integer value;
-    public Category category[];
+    public Category categories[];
 
     public Month() {
     }
@@ -14,7 +14,7 @@ public class Month implements Serializable {
     public Month(String monthId, Integer value, Category[] categories){
         this.monthId = monthId;
         this.value = value;
-        this.category = categories;
+        this.categories = categories;
     }
 
     public void setValue(Integer value) {this.value = value;}
