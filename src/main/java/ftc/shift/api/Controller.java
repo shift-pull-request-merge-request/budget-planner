@@ -37,10 +37,16 @@ public class Controller {
         return null;
     }
 
-    @PatchMapping(MONTHS_PATH + "/{id}/{name}")             //TODO: add new spending
-    public ResponseEntity<Month> addNewSpending(@PathVariable int id, @PathVariable String name, @RequestBody Month body) {
-        //onths result = service.addNewSpending(id, name, body);
-        //return ResponseEntity.ok(result);
-        return null;
+//    @PatchMapping(MONTHS_PATH + "/{id}/{name}")             //TODO: add new spending
+//    public ResponseEntity<Month> addNewSpending(@PathVariable int id, @PathVariable String name, @RequestBody Month body) {
+//        //onths result = service.addNewSpending(id, name, body);
+//        //return ResponseEntity.ok(result);
+//        return null;
+//    }
+
+    @PatchMapping(MONTHS_PATH + "/{id}/{balance}")             //TODO: add new spending
+    public ResponseEntity<Month> addNewSpending(@PathVariable int id, @PathVariable int balance, @RequestBody Month body) {
+        Month month = service.updateMonthValues(id, balance);
+        return ResponseEntity.ok(month);
     }
 }

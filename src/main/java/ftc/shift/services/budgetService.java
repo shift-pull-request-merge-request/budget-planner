@@ -48,8 +48,12 @@ public class budgetService {
         return new Month[0];
     }
 
-    public Month[] updateMonthValues(Month[] body) {
-        return new Month[0];
+    public Month updateMonthValues(int id, int balance) {
+        return repository.updateBalance(id, balance);
+    }
+
+    public Month getMonth(int id) {
+        return repository.getMonthById(id);
     }
 
     public Month[] addNewSpending(String id, String name, int body) {

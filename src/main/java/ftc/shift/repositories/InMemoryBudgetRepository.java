@@ -1,5 +1,6 @@
 package ftc.shift.repositories;
 
+import ftc.shift.models.Category;
 import ftc.shift.models.Month;
 
 @org.springframework.stereotype.Repository
@@ -12,8 +13,10 @@ public class InMemoryBudgetRepository {
     public InMemoryBudgetRepository() {
         months = new Month[12];
         for (int i = 0; i < 12; i++) {
-      //      months[i].monthId = String.valueOf(i + 1);
-        //    months[i].value = 0;
+            months[i] = new Month(i+1, -1, new Category[6]);
+            for (int j =0; j<6; j++){
+                //months[i].
+            }
         }
     }
 
@@ -22,4 +25,10 @@ public class InMemoryBudgetRepository {
             return null;
         else return months[id - 1];
     }
+
+    public Month updateBalance(int id, int balance){
+        months[id-1].balance = balance;
+        return months[id-1];
+    }
+
 }
