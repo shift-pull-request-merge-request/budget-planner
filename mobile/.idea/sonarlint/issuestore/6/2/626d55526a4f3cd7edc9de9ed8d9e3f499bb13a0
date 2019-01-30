@@ -1,0 +1,5 @@
+
+Ksquid:S1481"-Remove this unused "newSpend" local variable.(£†ôÛ8åË„ó‰-
+Zsquid:S1854"<Remove this useless assignment to local variable "newSpend".(£†ôÛ8åË„ó‰-
+}squid:S1450"_Remove the "editTextSpendSum" field and declare it as a local variable in the relevant methods.(æ˜¿¯8Î¬ùò‰-
+Rsquid:S1068"4Remove this unused "editTextSpendSum" private field.(æ˜¿¯8Î¬ùò‰-
