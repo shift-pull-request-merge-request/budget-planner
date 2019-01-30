@@ -16,4 +16,6 @@ public class Category implements Serializable{
         this.categoryValue = categoryValue;
         this.spending = spending;
     }
+
+    public void setCategoryValue (Integer categoryValue) {this.categoryValue = categoryValue;}
 }

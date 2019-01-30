@@ -17,5 +17,5 @@ public class Month implements Serializable {
         this.category = categories;
     }
 
-
+    public void setValue(Integer value) {this.value = value;}
 }

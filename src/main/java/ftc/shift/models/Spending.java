@@ -20,4 +20,13 @@ public class Spending implements Serializable {
         this.desc = desc;
         this.day = day;
     }
+
+    public void setSpending (String spendingId, Integer cost, String spendingName, String desc, String day){
+        this.spendingId = spendingId;
+        this.cost = cost;
+        this.spendingName = spendingName;
+        this.desc = desc;
+        this.day = day;
+    }
+
 }
