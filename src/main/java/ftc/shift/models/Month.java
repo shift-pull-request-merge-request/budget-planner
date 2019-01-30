@@ -34,6 +34,7 @@ public class Month implements Serializable {
     }
 
     public Month() {
+
     }
 
     public Month(int monthId, int balance, Category[] categories){

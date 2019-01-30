@@ -8,6 +8,30 @@ public class Category implements Serializable{
     private int balance;
     private Spending spendingHistory[];
 
+    public CategoryName getName() {
+        return name;
+    }
+
+    public void setName(CategoryName name) {
+        this.name = name;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public Spending[] getSpendingHistory() {
+        return spendingHistory;
+    }
+
+    public void setSpendingHistory(Spending[] spendingHistory) {
+        this.spendingHistory = spendingHistory;
+    }
+
     public Category() {
     }
 

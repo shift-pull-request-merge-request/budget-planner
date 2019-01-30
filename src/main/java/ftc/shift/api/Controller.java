@@ -36,7 +36,7 @@ public class Controller {
     }
 
     @PatchMapping(MONTHS_PATH + "/{monthId}/category/{categoryId}")
-    public ResponseEntity<Month> addNewSpending(@PathVariable int monthId, @PathVariable String categoryId, @RequestBody Month body) {
+    public ResponseEntity<Month> addNewSpending(@PathVariable int monthId, @PathVariable String categoryId, @RequestBody Spending body) {
         Month month = service.updateCategoriesSpending(monthId, categoryId, body);
         return ResponseEntity.ok(month);
     }

@@ -1,6 +1,8 @@
 package ftc.shift.services;
 
+import ftc.shift.models.Category;
 import ftc.shift.models.Month;
+import ftc.shift.models.Spending;
 import ftc.shift.repositories.InMemoryBudgetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,18 +47,18 @@ public class budgetService {
 //    }
 
     public Month addCategoryBalance(int monthId, String categoryName, int categoryBalance) {
-        return repository.addCategoryBalance(monthId, categoryName, categoryBalance);
+        return repository.updateCategoryBalance(monthId, categoryName, categoryBalance);
     }
 
     public Month addMonthBalance(int id, int balance) {
-        return repository.addBalance(id, balance);
+        return repository.updateBalance(id, balance);
     }
 
-    public Month updateCategoriesSpending(int monthId, String category, Month body) {
-        return  repository.UpdateCategorySpending(monthId, category, body);
+    public Month updateCategoriesSpending(int monthId, String category, Spending body) {
+        return repository.updateCategorySpending(monthId, category, body);
     }
 
     public Month getMonthById(int id) {
-       return repository.getMonthById(id);
+        return repository.getMonthById(id);
     }
 }
