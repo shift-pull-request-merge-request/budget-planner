@@ -1,19 +1,25 @@
 package ftc.shift.repositories;
 
-
-import ftc.shift.models.Months;
 import ftc.shift.models.Month;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 @org.springframework.stereotype.Repository
-public class InMemoryBudgetRepository{
+public class InMemoryBudgetRepository {
 
-    private Map<String, Months> bugdetCache = new HashMap<>();
+    //private Map<String, Months> bugdetCache = new HashMap<>();
 
-    public InMemoryBudgetRepository(){
-    //    bugdetCache.put();
+    private Month[] months;
+
+    public InMemoryBudgetRepository() {
+        months = new Month[12];
+        for (int i = 0; i < 12; i++) {
+      //      months[i].monthId = String.valueOf(i + 1);
+        //    months[i].value = 0;
+        }
+    }
+
+    public Month getMonthById(int id) {
+        if (id > 12 || id < 1)
+            return null;
+        else return months[id - 1];
     }
 }

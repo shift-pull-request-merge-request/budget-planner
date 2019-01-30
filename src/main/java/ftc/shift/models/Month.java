@@ -4,18 +4,42 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Month implements Serializable {
-    public String monthId;
-    public Integer value;
-    public Category categories[];
+    public int monthId;
+    public Integer balance;
+    private Category[] categories;
+
+    public int getMonthId() {
+        return monthId;
+    }
+
+    public void setMonthId(int monthId) {
+        this.monthId = monthId;
+    }
+
+    public Category[] getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Category[] categories) {
+        this.categories = categories;
+    }
+
+    public Integer getBalance() {
+
+        return balance;
+    }
+
+    public void setBalance(Integer balance) {
+        this.balance = balance;
+    }
 
     public Month() {
     }
 
-    public Month(String monthId, Integer value, Category[] categories){
+    public Month(int monthId, int balance, Category[] categories){
         this.monthId = monthId;
-        this.value = value;
+        this.balance = balance;
         this.categories = categories;
     }
 
-    public void setValue(Integer value) {this.value = value;}
 }
