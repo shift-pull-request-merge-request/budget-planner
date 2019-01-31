@@ -37,11 +37,12 @@ public class InMemoryBudgetRepository {
         return months[id - 1];
     }
 
-    public Month updateCategoryBalance(int id, String categoryName, int categoryBalance) {
-        if (months[id - 1].getBalance() < categoryBalance) return null;
+    public Month updateCategoryBalance(int id, String categoryName, int newCategoryBalance) {
         Category category = months[id - 1].getCategories()[CategoryName.valueOf(categoryName.toUpperCase()).getId()];
-        months[id - 1].setBalance(months[id - 1].getBalance() - categoryBalance);
-        category.setBalance(categoryBalance);
+        int newMonthBalance = months[id - 1].getBalance() + category.getBalance() - newCategoryBalance;
+        if (newMonthBalance < 0) return null;
+        months[id - 1].setBalance(newMonthBalance);
+        category.setBalance(newCategoryBalance);
         return months[id - 1];
     }
 
