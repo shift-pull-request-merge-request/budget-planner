@@ -9,6 +9,11 @@ public class DateUtils {
 
     }
 
+    public static String getTextMonth(int id) {
+        Calendar calendar = Calendar.getInstance();
+        return new DateFormatSymbols().getMonths()[id - 1];
+    }
+
     public static String getCurrentTextMonth() {
         Calendar calendar = Calendar.getInstance();
         return new DateFormatSymbols().getMonths()[calendar.get(Calendar.MONTH)];
@@ -16,7 +21,7 @@ public class DateUtils {
 
     public static int getCurrentMonth() {
         Calendar calendar = Calendar.getInstance();
-        return calendar.get(Calendar.MONTH);
+        return calendar.get(Calendar.MONTH) + 1;
     }
 
     public static int getCurrentDay() {

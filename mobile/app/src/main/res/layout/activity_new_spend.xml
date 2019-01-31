@@ -22,14 +22,6 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/editTextSpendSum"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/new_spend_activity_spend_hint"
-        android:inputType="number"
-        tools:ignore="Autofill" />
-
-    <EditText
         android:id="@+id/editTextSpendName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,10 +30,21 @@
         tools:ignore="Autofill" />
 
     <EditText
+        android:id="@+id/editTextSpendSum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/new_spend_activity_spend_hint"
+        android:inputType="number"
+        tools:ignore="Autofill" />
+
+    <EditText
         android:id="@+id/editTextSpendDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textMultiLine"
+        android:lines="8"
+        android:gravity="start"
+        android:maxLength="100"
         android:hint="@string/new_spend_activity_description_hint"
         tools:ignore="Autofill" />
 
@@ -50,6 +53,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="buttonAddSpendClick"
+        android:textStyle="normal"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:text="@string/new_spend_activity_button_add_spend" />
 
 </LinearLayout>

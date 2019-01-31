@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
@@ -7,14 +9,65 @@
     android:orientation="vertical"
     android:gravity="center">
 
+
+    <TextView
+        android:id="@+id/select_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_category_string"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00FF00" />
+        />
 
-    <TextView
-        android:id="@android:id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@android:id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/buttonEditBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="buttonEditBalanceClick"
+            android:text="@string/edit_balance" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextEditBalance"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/edit_balance_in_current_category_hint"
+            android:inputType="number"
+            android:visibility="invisible"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/buttonSetBalance"
+            android:onClick="buttonSetBalanceClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:text="@string/set_balance_string" />
+    </LinearLayout>
+
 </LinearLayout>

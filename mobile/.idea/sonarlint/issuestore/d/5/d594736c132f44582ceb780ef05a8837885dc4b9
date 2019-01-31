@@ -1,4 +1,0 @@
-
-{squid:S1450 "]Remove the "buttonNewSpend" field and declare it as a local variable in the relevant methods.(ê¯„É8¼‘ï‰-
-Psquid:S1068 "2Remove this unused "buttonNewSpend" private field.(ê¯„É8èÍøì‰-
-Ÿsquid:S1186u"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ñ¶Ï•8ãúÃñ‰-

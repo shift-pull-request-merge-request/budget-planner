@@ -24,20 +24,26 @@
 
         <Button
             android:id="@+id/buttonArrowLeft"
+            android:onClick="buttonArrowLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/arrow_left" />
+            android:text="@string/arrow_left"
+            android:textSize="12sp"/>
 
         <TextView
             android:id="@+id/textViewMonth"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorDark"
+            android:textSize="20sp"/>
 
         <Button
             android:id="@+id/buttonArrowRight"
+            android:onClick="buttonArrowRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/arrow_right" />
+            android:text="@string/arrow_right"
+            android:textSize="12sp"/>
 
     </LinearLayout>
 
@@ -52,17 +58,29 @@
             android:onClick="buttonBalanceMinusClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="12sp"
             android:text="@string/minus" />
 
         <TextView
-            android:id="@+id/textViewBalanceInCurrentCategory"
+            android:id="@+id/textViewBalanceInCurrentCategory1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/balance_in_current_category"
+            android:textSize="20sp"
+            android:textColor="@color/colorDark"/>
+
+        <TextView
+            android:id="@+id/textViewBalanceInCurrentCategory2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/colorPink"/>
 
         <Button
             android:id="@+id/buttonBalanceInCurrentCategoryPlus"
             android:onClick="buttonBalancePlusClick"
             android:layout_width="wrap_content"
+            android:textSize="12sp"
             android:layout_height="wrap_content"
             android:text="@string/plus" />
 
@@ -98,9 +116,10 @@
 
     <Button
         android:id="@+id/buttonNewSpend"
-        android:onClick="buttonNewSpendClick"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="buttonNewSpendClick"
         android:text="@string/addSpend" />
 
     <ListView

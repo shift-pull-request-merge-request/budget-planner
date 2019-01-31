@@ -4,12 +4,12 @@ public class Month {
 
     private int monthId;
     private int balance;
-    private Category[] category;
+    private Category[] categories;
 
     public Month(int monthId, int balance, Category[] categories) {
         this.monthId = monthId;
         this.balance = balance;
-        this.category = categories;
+        this.categories = categories;
     }
 
     public int getMonthId() {
@@ -20,7 +20,7 @@ public class Month {
         return balance;
     }
 
-    public Category[] getCategory() {
-        return category;
+    public Category[] getCategories() {
+        return categories;
     }
 }

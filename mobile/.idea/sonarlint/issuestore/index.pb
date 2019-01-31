@@ -2,18 +2,12 @@
 :
 
 mobile.iml,8\7\87282bd26b4d8f18e0a431c80293d0aaa8fd65e2
-p
-@app/src/main/java/ru/cft/android/budgetplanner/MainActivity.java,1\4\14362ff9e0b5b2fec96a990f1fc2cb916d0f232a
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-t
-Dapp/src/main/java/ru/cft/android/budgetplanner/NewSpendActivity.java,6\2\626d55526a4f3cd7edc9de9ed8d9e3f499bb13a0
 s
 Capp/src/main/java/ru/cft/android/budgetplanner/models/Category.java,c\5\c5f688bd0877323cb916b9de8d23be71efc9d58d
-t
-Dapp/src/main/java/ru/cft/android/budgetplanner/CategoryActivity.java,d\5\d594736c132f44582ceb780ef05a8837885dc4b9
 p
 @app/src/main/java/ru/cft/android/budgetplanner/models/Month.java,a\9\a9ff5703e3ed2c5c75ad8066ee73d95e8e3e1243
 s
@@ -30,3 +24,15 @@ k
 ;app/src/main/java/ru/cft/android/budgetplanner/api/Api.java,b\0\b05863d4731eb94ca322ddfd388e59f741dc8f1c
 s
 Capp/src/main/java/ru/cft/android/budgetplanner/api/RetrofitApi.java,7\3\733a8cdbd14fcb2ac5c23add1c4d1ce1babffd7a
+y
+Iapp/src/main/java/ru/cft/android/budgetplanner/view/NewSpendActivity.java,a\f\afda515bbe666d033ad509d53f3982df98efb2ba
+y
+Iapp/src/main/java/ru/cft/android/budgetplanner/view/CategoryActivity.java,e\f\ef90fb7c9b786ff5e3719b17654f3344226d8db8
+u
+Eapp/src/main/java/ru/cft/android/budgetplanner/view/MainActivity.java,8\d\8def15e4993a80962f6b7e662733be975f00738f
+v
+Fapp/src/main/java/ru/cft/android/budgetplanner/api/QueryException.java,b\d\bd9ec95ef35d85f87231b79419d061b143c1d626
+x
+Happ/src/main/java/ru/cft/android/budgetplanner/view/utils/ViewUtils.java,4\e\4ed077f06661b6f98b82e5ceadd26a3ddb314e8a
+Š
+Zapp/src/main/java/ru/cft/android/budgetplanner/api/callbacks/CallbackResponseListener.java,1\b\1b48fc6eb0bc572e11a1845df5c4236ddb326616

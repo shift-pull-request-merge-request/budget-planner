@@ -1,0 +1,4 @@
+
+Ksquid:S1068"4Remove this unused "editTextSpendSum" private field.(æ˜¿¯
+nsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(¶Ÿ ¶ûÿÿÿÿ8Ç»ÞžŠ-
+vsquid:S1450"_Remove the "editTextSpendSum" field and declare it as a local variable in the relevant methods.(æ˜¿¯

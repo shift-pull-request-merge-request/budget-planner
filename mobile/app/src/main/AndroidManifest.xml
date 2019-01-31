@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ru.cft.android.budgetplanner">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -12,9 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".NewSpendActivity" />
-        <activity android:name=".CategoryActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".view.NewSpendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.MainActivity"
+            android:screenOrientation="portrait" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

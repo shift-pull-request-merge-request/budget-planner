@@ -5,12 +5,12 @@
     <string name="plus">+</string>
     <string name="minus">-</string>
 
-    <string name="addSpend">Добавить трату</string>
+    <string name="addSpend">Добавить расходы</string>
 
     <string name="edit_balance_in_current_category_hint">Введите сумму</string>
     <string name="edit_balance_in_current_category">Изменить</string>
 
-    <string name="balance">Баланс:</string>
+    <string name="balance_in_current_category">Баланс:</string>
 
     <string-array name="month_array">
         <item>январь</item>
