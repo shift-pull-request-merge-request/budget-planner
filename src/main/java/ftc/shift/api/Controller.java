@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("*")
 public class Controller {
 
     private static final String MONTHS_PATH = "/api/months";
@@ -23,10 +24,10 @@ public class Controller {
     }
 
     @PostMapping(MONTHS_PATH)
-    public ResponseEntity postMonth(@RequestBody Month body){
+    public ResponseEntity postMonth(@RequestBody Month body) {
         try {
             service.postMonth(body);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
         return ResponseEntity.ok(body);
