@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:gravity="top|center">
+
+    <TextView
+        android:id="@+id/textViewCurrentCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="top|center">
+
+        <Button
+            android:id="@+id/buttonArrowLeft"
+            android:onClick="buttonArrowLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/arrow_left"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/textViewMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorDark"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/buttonArrowRight"
+            android:onClick="buttonArrowRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/arrow_right"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="top|center">
+
+        <Button
+            android:id="@+id/buttonBalanceInCurrentCategoryMinus"
+            android:onClick="buttonBalanceMinusClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@string/minus" />
+
+        <TextView
+            android:id="@+id/textViewBalanceInCurrentCategory1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/balance_in_current_category"
+            android:textSize="20sp"
+            android:textColor="@color/colorDark"/>
+
+        <TextView
+            android:id="@+id/textViewBalanceInCurrentCategory2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/colorPink"/>
+
+        <Button
+            android:id="@+id/buttonBalanceInCurrentCategoryPlus"
+            android:onClick="buttonBalancePlusClick"
+            android:layout_width="wrap_content"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:text="@string/plus" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="top|center">
+
+        <EditText
+            android:id="@+id/editTextEditBalanceInCurrentCategory"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/edit_balance_in_current_category_hint"
+            android:inputType="number"
+            android:visibility="gone"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/buttonEditBalanceInCurrentCategory"
+            android:onClick="buttonEditBalanceInCurrentCategoryClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:text="@string/edit_balance_in_current_category"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonNewSpend"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNewSpendClick"
+        android:text="@string/addSpend" />
+
+    <ListView
+        android:id="@+id/listViewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

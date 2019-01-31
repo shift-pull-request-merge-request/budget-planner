@@ -1,0 +1,19 @@
+<resources>
+    <string name="select_category_string">Выберите категорию:</string>
+    <string name="balance_string">Нераспределенная сумма:</string>
+    <string name="set_balance_string">Задать</string>
+    <string name="edit_balance">Изменить</string>
+
+    <string name="error_title_string">Ошибка</string>
+    <string name="error_body_string">Ошибка соединения с сервером:</string>
+    <string name="error_button_string">Ок</string>
+
+    <string-array name="standard_category_array">
+        <item>Продукты</item>
+        <item>Рестораны и кафе</item>
+        <item>Транспорт</item>
+        <item>ЖКХ, связь, интернет</item>
+        <item>Развлечения</item>
+        <item>Покупки</item>
+    </string-array>
+</resources>
