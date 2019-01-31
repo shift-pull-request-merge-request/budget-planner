@@ -1,1 +1,547 @@
-{"months":[{"monthId":1,"balance":88,"categories":[{"name":"FOOD","balance":1400,"spendingHistory":[{"id":1,"cost":100,"name":"juice","description":"orange juice","day":1},{"id":2,"cost":500,"name":"vodka","description":"bottle of vodka","day":1},{"id":3,"cost":600,"name":"juice","description":"orange juice","day":1}]},{"name":"RESTAURANT","balance":2710,"spendingHistory":[{"id":1,"cost":200,"name":"big mac","description":"burger from mcdonald's","day":2},{"id":2,"cost":90,"name":"coke","description":"coke from mcdonald's","day":2}]},{"name":"TRANSPORT","balance":1880,"spendingHistory":[{"id":1,"cost":50,"name":"marshrutka","description":"to academ","day":3},{"id":2,"cost":50,"name":"marshrutka","description":"to home","day":4},{"id":3,"cost":20,"name":"metro","description":"to home","day":4}]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":2,"balance":10234,"categories":[{"name":"FOOD","balance":400,"spendingHistory":[{"id":1,"cost":100,"name":"juice","description":"orange juice","day":1},{"id":2,"cost":500,"name":"vodka","description":"bottle of vodka","day":1}]},{"name":"RESTAURANT","balance":2710,"spendingHistory":[{"id":1,"cost":200,"name":"big mac","description":"burger from mcdonald's","day":2},{"id":2,"cost":90,"name":"coke","description":"coke from mcdonald's","day":2}]},{"name":"TRANSPORT","balance":1880,"spendingHistory":[{"id":1,"cost":50,"name":"marshrutka","description":"to academ","day":3},{"id":2,"cost":50,"name":"marshrutka","description":"to home","day":4},{"id":3,"cost":20,"name":"metro","description":"to home","day":4}]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":3,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":4,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":5,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":6,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":7,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":8,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":9,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":10,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":11,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]},{"monthId":12,"balance":0,"categories":[{"name":"FOOD","balance":0,"spendingHistory":[]},{"name":"RESTAURANT","balance":0,"spendingHistory":[]},{"name":"TRANSPORT","balance":0,"spendingHistory":[]},{"name":"COMMUNICATION","balance":0,"spendingHistory":[]},{"name":"FUN","balance":0,"spendingHistory":[]},{"name":"PURCHASE","balance":0,"spendingHistory":[]}]}]}
+{
+  "months": [
+    {
+      "monthId": 1,
+      "balance": 1288,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 200,
+          "spendingHistory": [
+            {
+              "id": 1,
+              "cost": 100,
+              "name": "juice",
+              "description": "orange juice",
+              "day": 1
+            },
+            {
+              "id": 2,
+              "cost": 500,
+              "name": "vodka",
+              "description": "bottle of vodka",
+              "day": 1
+            },
+            {
+              "id": 3,
+              "cost": 600,
+              "name": "juice",
+              "description": "orange juice",
+              "day": 1
+            }
+          ]
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 2710,
+          "spendingHistory": [
+            {
+              "id": 1,
+              "cost": 200,
+              "name": "big mac",
+              "description": "burger from mcdonald's",
+              "day": 2
+            },
+            {
+              "id": 2,
+              "cost": 90,
+              "name": "coke",
+              "description": "coke from mcdonald's",
+              "day": 2
+            }
+          ]
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 1880,
+          "spendingHistory": [
+            {
+              "id": 1,
+              "cost": 50,
+              "name": "marshrutka",
+              "description": "to academ",
+              "day": 3
+            },
+            {
+              "id": 2,
+              "cost": 50,
+              "name": "marshrutka",
+              "description": "to home",
+              "day": 4
+            },
+            {
+              "id": 3,
+              "cost": 20,
+              "name": "metro",
+              "description": "to home",
+              "day": 4
+            }
+          ]
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 2,
+      "balance": 10234,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 400,
+          "spendingHistory": [
+            {
+              "id": 1,
+              "cost": 100,
+              "name": "juice",
+              "description": "orange juice",
+              "day": 1
+            },
+            {
+              "id": 2,
+              "cost": 500,
+              "name": "vodka",
+              "description": "bottle of vodka",
+              "day": 1
+            }
+          ]
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 2710,
+          "spendingHistory": [
+            {
+              "id": 1,
+              "cost": 200,
+              "name": "big mac",
+              "description": "burger from mcdonald's",
+              "day": 2
+            },
+            {
+              "id": 2,
+              "cost": 90,
+              "name": "coke",
+              "description": "coke from mcdonald's",
+              "day": 2
+            }
+          ]
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 1880,
+          "spendingHistory": [
+            {
+              "id": 1,
+              "cost": 50,
+              "name": "marshrutka",
+              "description": "to academ",
+              "day": 3
+            },
+            {
+              "id": 2,
+              "cost": 50,
+              "name": "marshrutka",
+              "description": "to home",
+              "day": 4
+            },
+            {
+              "id": 3,
+              "cost": 20,
+              "name": "metro",
+              "description": "to home",
+              "day": 4
+            }
+          ]
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 3,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 4,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 5,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 6,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 7,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 8,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 9,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 10,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 11,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    },
+    {
+      "monthId": 12,
+      "balance": 0,
+      "categories": [
+        {
+          "name": "FOOD",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "RESTAURANT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "TRANSPORT",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "COMMUNICATION",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "FUN",
+          "balance": 0,
+          "spendingHistory": []
+        },
+        {
+          "name": "PURCHASE",
+          "balance": 0,
+          "spendingHistory": []
+        }
+      ]
+    }
+  ]
+}

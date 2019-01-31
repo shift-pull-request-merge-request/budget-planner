@@ -2,13 +2,14 @@ package ftc.shift.repositories;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ftc.shift.models.*;
+import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
 
 
 @Repository
-public class InMemoryBudgetRepository {
+public class InMemoryBudgetRepository{
     public static int MONTH_NUM = 12;
     private static int CATEGORIES_NUM = 6;
 
