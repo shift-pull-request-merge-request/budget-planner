@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class InMemoryBudgetRepository {
 
-    private static int MONTH_NUM = 12;
+    public static int MONTH_NUM = 12;
     private static int CATEGORIES_NUM = 6;
 
     private Month[] months;
@@ -51,8 +51,14 @@ public class InMemoryBudgetRepository {
         Category category = month.getCategories()[CategoryName.valueOf(categoryName.toUpperCase()).getId()];
         if (category.getBalance() < body.getCost()) return null;
         category.setBalance(category.getBalance() - body.getCost());
-        body.setId(category.getSpendingHistory().size() + 1);
+        body.setId(category.getSpendingHistory().size() + 1);               //ids start from 1
         category.getSpendingHistory().add(body);
         return month;
+    }
+
+    public void updateMonth(Month body) {
+        if (body.getMonthId() > MONTH_NUM || body.getMonthId() < 1)
+            throw new IllegalArgumentException();
+        else months[body.getMonthId() - 1] = body;
     }
 }

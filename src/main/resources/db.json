@@ -1,0 +1,88 @@
+{
+  "monthId": 1,
+  "balance": 0,
+  "categories": [
+    {
+      "name": "FOOD",
+      "balance": 4400,
+      "spendingHistory": [
+        {
+          "id": 1,
+          "cost": 100,
+          "name": "juice",
+          "description": "orange juice",
+          "day": 1
+        },
+        {
+          "id": 2,
+          "cost": 500,
+          "name": "vodka",
+          "description": "bottle of vodka",
+          "day": 1
+        }
+      ]
+    },
+    {
+      "name": "RESTAURANT",
+      "balance": 2710,
+      "spendingHistory": [
+        {
+          "id": 1,
+          "cost": 200,
+          "name": "big mac",
+          "description": "burger from mcdonald's",
+          "day": 2
+        },
+        {
+          "id": 2,
+          "cost": 90,
+          "name": "coke",
+          "description": "coke from mcdonald's",
+          "day": 2
+        }
+      ]
+    },
+    {
+      "name": "TRANSPORT",
+      "balance": 1880,
+      "spendingHistory": [
+        {
+          "id": 1,
+          "cost": 50,
+          "name": "marshrutka",
+          "description": "to academ",
+          "day": 3
+        },
+        {
+          "id": 2,
+          "cost": 50,
+          "name": "marshrutka",
+          "description": "to home",
+          "day": 4
+        },
+        {
+          "id": 3,
+          "cost": 20,
+          "name": "metro",
+          "description": "to home",
+          "day": 4
+        }
+      ]
+    },
+    {
+      "name": "COMMUNICATION",
+      "balance": 0,
+      "spendingHistory": []
+    },
+    {
+      "name": "FUN",
+      "balance": 0,
+      "spendingHistory": []
+    },
+    {
+      "name": "PURCHASE",
+      "balance": 0,
+      "spendingHistory": []
+    }
+  ]
+}

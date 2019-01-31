@@ -31,4 +31,8 @@ public class BudgetService {
     public Month getMonthById(int id) {
         return repository.getMonthById(id);
     }
+
+    public void postMonth(Month body) {
+        repository.updateMonth(body);
+    }
 }
