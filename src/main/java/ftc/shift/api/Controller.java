@@ -41,13 +41,13 @@ public class Controller {
     }
 
     @PatchMapping(MONTHS_PATH + "/{monthId}/{balance}")
-    public ResponseEntity<Month> addMonthBalance(@PathVariable int monthId, @PathVariable int balance, @RequestBody Month body) {
+    public ResponseEntity<Month> addMonthBalance(@PathVariable int monthId, @PathVariable int balance) {
         Month month = service.addMonthBalance(monthId, balance);
         return ResponseEntity.ok(month);
     }
 
     @PatchMapping(MONTHS_PATH + "/{monthId}/category/{categoryName}/{categoryBalance}")
-    public ResponseEntity<Month> addCategoryBalance(@PathVariable int monthId, @PathVariable String categoryName, @PathVariable int categoryBalance, @RequestBody Month body) {
+    public ResponseEntity<Month> addCategoryBalance(@PathVariable int monthId, @PathVariable String categoryName, @PathVariable int categoryBalance) {
         Month month = service.addCategoryBalance(monthId, categoryName, categoryBalance);
         return ResponseEntity.ok(month);
     }
