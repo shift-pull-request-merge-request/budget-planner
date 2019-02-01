@@ -12,7 +12,6 @@ import java.util.List;
 
 import ru.cft.android.budgetplanner.R;
 import ru.cft.android.budgetplanner.models.Spending;
-import ru.cft.android.budgetplanner.utils.DateUtils;
 
 public class SpendingListAdapter extends ArrayAdapter<Spending> {
 
@@ -41,5 +40,10 @@ public class SpendingListAdapter extends ArrayAdapter<Spending> {
         ((TextView) convertView.findViewById(android.R.id.text1)).setText(topString);
         ((TextView) convertView.findViewById(android.R.id.text2)).setText(bottomString);
         return convertView;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
     }
 }

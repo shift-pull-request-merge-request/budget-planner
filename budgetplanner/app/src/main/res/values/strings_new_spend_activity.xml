@@ -6,4 +6,11 @@
     <string name="new_spend_activity_button_add_spend">Добавить</string>
 
     <string name="spend_list_adapter_history_cost">Стоимость:</string>
+
+    <string name="alert_not_correct_spend_sum_title">Ошибка</string>
+    <string name="alert_not_correct_spend_sum_body">Недостаточно денег на кошельке.</string>
+    <string name="alert_not_correct_spend_sum_button">Ок</string>
+
+    <string name="toast_name_is_empty">Не заполненно поле с названием</string>
+    <string name="toast_cost_is_empty">Не заполненно поле с суммой</string>
 </resources>

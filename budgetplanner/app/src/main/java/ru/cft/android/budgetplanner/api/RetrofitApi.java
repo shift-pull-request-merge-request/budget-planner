@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitApi {
 
-    private static final String SERVER_IP = "http://10.9.49.209:8081";
+    private static final String SERVER_IP = "http://37.192.145.83:8081";
 
     private static Api api;
 

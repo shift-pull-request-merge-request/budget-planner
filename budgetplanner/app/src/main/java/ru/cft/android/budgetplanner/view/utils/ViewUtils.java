@@ -30,7 +30,7 @@ public class ViewUtils {
         Activity activity = (Activity) context;
         InputMethodManager inputMethodManager =
                 (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(
+        Objects.requireNonNull(inputMethodManager).hideSoftInputFromWindow(
                 Objects.requireNonNull(activity.getCurrentFocus()).getWindowToken(), 0);
     }
 }
