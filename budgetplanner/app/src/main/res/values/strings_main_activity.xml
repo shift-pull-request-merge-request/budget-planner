@@ -8,6 +8,8 @@
     <string name="error_body_string">Ошибка соединения с сервером:</string>
     <string name="error_button_string">Ок</string>
 
+    <string name="all_balance_string">Баланс:</string>
+
     <string-array name="standard_category_array">
         <item>Продукты</item>
         <item>Рестораны и кафе</item>

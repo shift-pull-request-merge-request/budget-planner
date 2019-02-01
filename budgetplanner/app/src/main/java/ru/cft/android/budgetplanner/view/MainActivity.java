@@ -13,16 +13,20 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 import ru.cft.android.budgetplanner.R;
 import ru.cft.android.budgetplanner.api.RetrofitApi;
 import ru.cft.android.budgetplanner.api.callbacks.DefaultCallback;
+import ru.cft.android.budgetplanner.models.Category;
+import ru.cft.android.budgetplanner.models.Month;
 import ru.cft.android.budgetplanner.utils.DateUtils;
 import ru.cft.android.budgetplanner.view.utils.ViewUtils;
 
 public class MainActivity extends ListActivity {
 
     private TextView textViewBalance;
+    private TextView textViewAllBalance;
     private EditText editTextEditBalance;
     private Button buttonSetBalance;
 
@@ -59,14 +63,25 @@ public class MainActivity extends ListActivity {
         ViewGroup viewGroup = findViewById(android.R.id.content);
         View currentView = currentInflater.inflate(android.R.layout.simple_list_item_1, viewGroup);
         textViewBalance = currentView.findViewById(android.R.id.text1);
+        textViewAllBalance = currentView.findViewById(R.id.textViewAllBalance);
         editTextEditBalance = findViewById(R.id.editTextEditBalance);
         buttonSetBalance = findViewById(R.id.buttonSetBalance);
+    }
+
+    private void printAllBalance(Month month) {
+        int allBalance = month.getBalance();
+        allBalance += Stream.of(month.getCategories())
+                .mapToInt(Category::getBalance)
+                .sum();
+        String allBalanceText = getString(R.string.all_balance_string) + " " + allBalance;
+        textViewAllBalance.setText(allBalanceText);
     }
 
     private void setBalance() {
         RetrofitApi.getApi()
                 .getData(DateUtils.getCurrentMonth())
                 .enqueue(new DefaultCallback(this, month -> {
+                    printAllBalance(month);
                     int balance = month.getBalance();
                     String balanceText = getResources().getString(R.string.balance_string) + " " + balance;
                     textViewBalance.setText(balanceText);
@@ -92,6 +107,7 @@ public class MainActivity extends ListActivity {
         RetrofitApi.getApi()
                 .patchBalance(DateUtils.getCurrentMonth(), readBalance)
                 .enqueue(new DefaultCallback(this, month -> {
+                    printAllBalance(month);
                     int balance = month.getBalance();
                     String balanceText = getResources().getString(R.string.balance_string) + " " + balance;
                     textViewBalance.setText(balanceText);
