@@ -35,26 +35,28 @@ public class Controller {
 
     @GetMapping(MONTHS_PATH + "/{id}")
     public ResponseEntity getMonthById(@PathVariable int id) {
-        if (id > InMemoryBudgetRepository.MONTH_NUM || id < 1) return new ResponseEntity(HttpStatus.BAD_REQUEST);
         Month result = service.getMonthById(id);
         return ResponseEntity.ok(result);
     }
 
     @PatchMapping(MONTHS_PATH + "/{monthId}/{balance}")
-    public ResponseEntity<Month> addMonthBalance(@PathVariable int monthId, @PathVariable int balance) {
+    public ResponseEntity addMonthBalance(@PathVariable int monthId, @PathVariable int balance) {
         Month month = service.addMonthBalance(monthId, balance);
+        if (month == null) return new ResponseEntity(HttpStatus.BAD_REQUEST);
         return ResponseEntity.ok(month);
     }
 
     @PatchMapping(MONTHS_PATH + "/{monthId}/category/{categoryName}/{categoryBalance}")
-    public ResponseEntity<Month> addCategoryBalance(@PathVariable int monthId, @PathVariable String categoryName, @PathVariable int categoryBalance) {
+    public ResponseEntity addCategoryBalance(@PathVariable int monthId, @PathVariable String categoryName, @PathVariable int categoryBalance) {
         Month month = service.addCategoryBalance(monthId, categoryName, categoryBalance);
+        if (month == null) return new ResponseEntity(HttpStatus.BAD_REQUEST);
         return ResponseEntity.ok(month);
     }
 
     @PatchMapping(MONTHS_PATH + "/{monthId}/category/{categoryName}")
-    public ResponseEntity<Month> addNewSpending(@PathVariable int monthId, @PathVariable String categoryName, @RequestBody Spending body) {
+    public ResponseEntity addNewSpending(@PathVariable int monthId, @PathVariable String categoryName, @RequestBody Spending body) {
         Month month = service.updateCategoriesSpending(monthId, categoryName, body);
+        if (month == null) return new ResponseEntity(HttpStatus.BAD_REQUEST);
         return ResponseEntity.ok(month);
     }
 

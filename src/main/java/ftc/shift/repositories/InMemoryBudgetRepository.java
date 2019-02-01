@@ -29,7 +29,7 @@ public class InMemoryBudgetRepository{
 
     public Month getMonthById(int id) {
         if (id > MONTH_NUM || id < 1)
-            return null;
+            throw new IllegalArgumentException("Month id is incorrect");
         else return months.getMonths()[id - 1];
     }
 
@@ -46,7 +46,7 @@ public class InMemoryBudgetRepository{
     public Month updateCategoryBalance(int id, String categoryName, int newCategoryBalance) {
         Category category = months.getMonths()[id - 1].getCategories()[CategoryName.valueOf(categoryName.toUpperCase()).getId()];
         int newMonthBalance = months.getMonths()[id - 1].getBalance() + category.getBalance() - newCategoryBalance;
-        if (newMonthBalance < 0) return null;
+        if (newMonthBalance < 0) throw new IllegalArgumentException("Month balance is too low");
         months.getMonths()[id - 1].setBalance(newMonthBalance);
         category.setBalance(newCategoryBalance);
         try (OutputStream fos = new FileOutputStream("work/db.json")) {
@@ -61,7 +61,7 @@ public class InMemoryBudgetRepository{
     updateCategorySpending(int monthId, String categoryName, Spending body) {
         Month month = months.getMonths()[monthId - 1];
         Category category = month.getCategories()[CategoryName.valueOf(categoryName.toUpperCase()).getId()];
-        if (category.getBalance() < body.getCost()) return null;
+        if (category.getBalance() < body.getCost()) throw new IllegalArgumentException("Not enough money");
         try (OutputStream fos = new FileOutputStream("work/db.json")) {
             category.setBalance(category.getBalance() - body.getCost());
             body.setId(category.getSpendingHistory().size() + 1);               //ids start from 1
@@ -75,7 +75,7 @@ public class InMemoryBudgetRepository{
 
     public void updateMonth(Month body) {
         if (body.getMonthId() > MONTH_NUM || body.getMonthId() < 1)
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Month id is incorrect");
         try (OutputStream fos = new FileOutputStream("work/db.json")) {
             months.getMonths()[body.getMonthId() - 1] = body;
             new ObjectMapper().writerFor(Months.class).writeValue(fos, months);
