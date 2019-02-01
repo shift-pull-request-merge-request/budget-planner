@@ -16,6 +16,7 @@ public class Spending {
         this.day = day;
     }
 
+    @SuppressWarnings("unused")
     public int getSpendingId() {
         return spendingId;
     }

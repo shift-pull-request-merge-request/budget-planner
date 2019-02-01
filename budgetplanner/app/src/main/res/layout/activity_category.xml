@@ -53,14 +53,6 @@
         android:orientation="horizontal"
         android:gravity="top|center">
 
-        <Button
-            android:id="@+id/buttonBalanceInCurrentCategoryMinus"
-            android:onClick="buttonBalanceMinusClick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="@string/minus" />
-
         <TextView
             android:id="@+id/textViewBalanceInCurrentCategory1"
             android:layout_width="wrap_content"
@@ -71,18 +63,11 @@
 
         <TextView
             android:id="@+id/textViewBalanceInCurrentCategory2"
+            android:onClick="textViewBalanceClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="@color/colorPink"/>
-
-        <Button
-            android:id="@+id/buttonBalanceInCurrentCategoryPlus"
-            android:onClick="buttonBalancePlusClick"
-            android:layout_width="wrap_content"
-            android:textSize="12sp"
-            android:layout_height="wrap_content"
-            android:text="@string/plus" />
 
     </LinearLayout>
 
@@ -98,19 +83,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:maxLength="9"
             android:hint="@string/edit_balance_in_current_category_hint"
             android:inputType="number"
             android:visibility="gone"
             tools:ignore="Autofill" />
 
         <Button
-            android:id="@+id/buttonEditBalanceInCurrentCategory"
-            android:onClick="buttonEditBalanceInCurrentCategoryClick"
+            android:id="@+id/buttonSetBalanceInCurrentCategory"
+            android:onClick="buttonSetBalanceInCurrentCategoryClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:visibility="gone"
-            android:text="@string/edit_balance_in_current_category"
+            android:text="@string/set_balance_in_current_category"
             />
     </LinearLayout>
 

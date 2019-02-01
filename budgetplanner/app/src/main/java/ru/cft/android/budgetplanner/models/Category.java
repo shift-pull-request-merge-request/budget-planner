@@ -23,5 +23,4 @@ public class Category {
     public Spending[] getSpendingHistory() {
         return spendingHistory;
     }
-
 }

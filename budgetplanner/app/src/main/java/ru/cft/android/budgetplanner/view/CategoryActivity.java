@@ -23,6 +23,7 @@ import ru.cft.android.budgetplanner.models.CategoryName;
 import ru.cft.android.budgetplanner.models.Spending;
 import ru.cft.android.budgetplanner.utils.DateUtils;
 import ru.cft.android.budgetplanner.view.adapters.SpendingListAdapter;
+import ru.cft.android.budgetplanner.view.utils.ViewUtils;
 
 public class CategoryActivity extends Activity {
 
@@ -35,10 +36,10 @@ public class CategoryActivity extends Activity {
     private TextView textViewCurrentCategory;
     private TextView textViewMonth;
     private TextView textViewBalanceInCurrentCategory2;
-    private Button buttonNewSpend;
-    private Button buttonEditBalanceInCurrentCategory;
+    private Button buttonSetBalanceInCurrentCategory;
     private EditText editTextEditBalanceInCurrentCategory;
     private ListView listViewHistory;
+    private Button buttonNewSpend;
 
     static {
         CATEGORIES_ID.put(CategoryName.FOOD, 0);
@@ -54,11 +55,14 @@ public class CategoryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         currentCategory = getIntent().getStringExtra(Intent.EXTRA_TEXT);
-        currentCategoryId = getIntent().getIntExtra("id", -1);
-        monthId = DateUtils.getCurrentMonth();
-
+        currentCategoryId = getIntent().getIntExtra(Intent.EXTRA_INDEX, -1);
         findViews();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        monthId = DateUtils.getCurrentMonth();
         setCurrentMonth(DateUtils.getCurrentMonth());
         setCategoryInformationFromServer(monthId);
         textViewCurrentCategory.setText(currentCategory);
@@ -71,25 +75,21 @@ public class CategoryActivity extends Activity {
         startActivity(intent);
     }
 
-    public void buttonBalanceMinusClick(View view) {
-        setVisibilityEditBalanceElements(View.VISIBLE);
-    }
-
-    public void buttonBalancePlusClick(View view) {
-        setVisibilityEditBalanceElements(View.VISIBLE);
-    }
-
-    public void buttonEditBalanceInCurrentCategoryClick(View view) {
+    public void buttonSetBalanceInCurrentCategoryClick(View view) {
+        ViewUtils.hideKeyboard(this);
+        if (DateUtils.getCurrentMonth() != monthId) {
+            return;
+        }
         setVisibilityEditBalanceElements(View.GONE);
+        if (editTextEditBalanceInCurrentCategory.getText().toString().isEmpty()) {
+            return;
+        }
         int readBalance = Integer.parseInt(editTextEditBalanceInCurrentCategory.getText().toString());
         CategoryName currentCategoryName = CategoryName.values()[currentCategoryId];
         RetrofitApi.getApi()
-                .patchCategoryBalance(monthId, currentCategoryName ,readBalance)
-                .enqueue(new DefaultCallback(this, month -> {
-                    int balance = month.getBalance();
-                    String balanceText = getResources().getString(R.string.balance_string) + " " + balance;
-                    editTextEditBalanceInCurrentCategory.setText(balanceText);
-                }));
+                .patchCategoryBalance(monthId, currentCategoryName, readBalance)
+                .enqueue(new DefaultCallback(this,
+                        month -> textViewBalanceInCurrentCategory2.setText(String.valueOf(readBalance))));
         editTextEditBalanceInCurrentCategory.setText("");
     }
 
@@ -97,15 +97,20 @@ public class CategoryActivity extends Activity {
         textViewCurrentCategory = findViewById(R.id.textViewCurrentCategory);
         textViewMonth = findViewById(R.id.textViewMonth);
         textViewBalanceInCurrentCategory2 = findViewById(R.id.textViewBalanceInCurrentCategory2);
-        buttonNewSpend = findViewById(R.id.buttonNewSpend);
-        buttonEditBalanceInCurrentCategory = findViewById(R.id.buttonEditBalanceInCurrentCategory);
+        buttonSetBalanceInCurrentCategory = findViewById(R.id.buttonSetBalanceInCurrentCategory);
         editTextEditBalanceInCurrentCategory = findViewById(R.id.editTextEditBalanceInCurrentCategory);
         listViewHistory = findViewById(R.id.listViewHistory);
+        buttonNewSpend = findViewById(R.id.buttonNewSpend);
     }
 
     private void setCurrentMonth(int monthId) {
         String month = DateUtils.getTextMonth(monthId);
         textViewMonth.setText(month);
+        if (monthId != DateUtils.getCurrentMonth()) {
+            buttonNewSpend.setVisibility(View.GONE);
+        } else {
+            buttonNewSpend.setVisibility(View.VISIBLE);
+        }
     }
 
     private void setHistorySpend(Category category) {
@@ -145,7 +150,7 @@ public class CategoryActivity extends Activity {
     }
 
     private void setVisibilityEditBalanceElements(int visibility) {
-        buttonEditBalanceInCurrentCategory.setVisibility(visibility);
+        buttonSetBalanceInCurrentCategory.setVisibility(visibility);
         editTextEditBalanceInCurrentCategory.setVisibility(visibility);
     }
 
@@ -157,5 +162,12 @@ public class CategoryActivity extends Activity {
     public void buttonArrowRight(View view) {
         monthId = (monthId == 12) ? 1 : ++monthId;
         setCategoryInformationFromServer(monthId);
+    }
+
+    public void textViewBalanceClick(View view) {
+        if (monthId != DateUtils.getCurrentMonth()) {
+            return;
+        }
+        setVisibilityEditBalanceElements(View.VISIBLE);
     }
 }

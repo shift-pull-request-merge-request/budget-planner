@@ -12,6 +12,7 @@ public class Month {
         this.categories = categories;
     }
 
+    @SuppressWarnings("unused")
     public int getMonthId() {
         return monthId;
     }

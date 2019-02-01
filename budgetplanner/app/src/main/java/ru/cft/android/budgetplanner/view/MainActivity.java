@@ -18,6 +18,7 @@ import ru.cft.android.budgetplanner.R;
 import ru.cft.android.budgetplanner.api.RetrofitApi;
 import ru.cft.android.budgetplanner.api.callbacks.DefaultCallback;
 import ru.cft.android.budgetplanner.utils.DateUtils;
+import ru.cft.android.budgetplanner.view.utils.ViewUtils;
 
 public class MainActivity extends ListActivity {
 
@@ -29,15 +30,17 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         findViews();
 
         String[] listStandardCategory = getResources().getStringArray(R.array.standard_category_array);
-
         ArrayAdapter<String> listAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, Arrays.asList(listStandardCategory));
         setListAdapter(listAdapter);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
         setBalance();
     }
 
@@ -47,7 +50,7 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(this, CategoryActivity.class);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, String.valueOf(listView.getItemAtPosition(position)));
-        intent.putExtra("id", position);
+        intent.putExtra(Intent.EXTRA_INDEX, position);
         startActivity(intent);
     }
 
@@ -80,12 +83,16 @@ public class MainActivity extends ListActivity {
     }
 
     public void buttonSetBalanceClick(View view) {
+        ViewUtils.hideKeyboard(this);
         setVisibilityEditBalanceElements(View.GONE);
+        if (editTextEditBalance.getText().toString().isEmpty()) {
+            return;
+        }
         int readBalance = Integer.parseInt(editTextEditBalance.getText().toString());
         RetrofitApi.getApi()
                 .patchBalance(DateUtils.getCurrentMonth(), readBalance)
                 .enqueue(new DefaultCallback(this, month -> {
-                    int balance = month.getBalance(); // todo
+                    int balance = month.getBalance();
                     String balanceText = getResources().getString(R.string.balance_string) + " " + balance;
                     textViewBalance.setText(balanceText);
                 }));

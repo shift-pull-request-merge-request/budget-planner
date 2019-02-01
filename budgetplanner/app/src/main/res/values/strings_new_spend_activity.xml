@@ -6,5 +6,4 @@
     <string name="new_spend_activity_button_add_spend">Добавить</string>
 
     <string name="spend_list_adapter_history_cost">Стоимость:</string>
-    <string name="spend_list_adapter_history_date">Дата:</string>
 </resources>

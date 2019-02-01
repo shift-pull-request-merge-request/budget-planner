@@ -8,9 +8,12 @@
     <string name="addSpend">Добавить расходы</string>
 
     <string name="edit_balance_in_current_category_hint">Введите сумму</string>
+    <string name="set_balance_in_current_category">Задать</string>
     <string name="edit_balance_in_current_category">Изменить</string>
 
     <string name="balance_in_current_category">Баланс:</string>
+
+    <string name="spend_list_adapter_history_date">Дата:</string>
 
     <string-array name="month_array">
         <item>январь</item>

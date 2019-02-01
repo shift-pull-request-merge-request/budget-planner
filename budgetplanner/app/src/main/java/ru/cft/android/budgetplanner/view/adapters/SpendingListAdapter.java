@@ -12,6 +12,7 @@ import java.util.List;
 
 import ru.cft.android.budgetplanner.R;
 import ru.cft.android.budgetplanner.models.Spending;
+import ru.cft.android.budgetplanner.utils.DateUtils;
 
 public class SpendingListAdapter extends ArrayAdapter<Spending> {
 
@@ -21,7 +22,6 @@ public class SpendingListAdapter extends ArrayAdapter<Spending> {
         super(context, android.R.layout.simple_list_item_2, spendingList);
         this.context = context;
     }
-
 
     @SuppressWarnings("ConstantConditions")
     @NonNull
@@ -35,7 +35,8 @@ public class SpendingListAdapter extends ArrayAdapter<Spending> {
             convertView = LayoutInflater.from(getContext())
                     .inflate(android.R.layout.simple_list_item_2, null);
         }
-        String topString = spending.getName() + " " + costText + spending.getCost() + " " + dateText + spending.getDay();
+        String topString = spending.getName() + " " + costText + spending.getCost() + " " +
+                dateText + spending.getDay();
         String bottomString = spending.getDescription();
         ((TextView) convertView.findViewById(android.R.id.text1)).setText(topString);
         ((TextView) convertView.findViewById(android.R.id.text2)).setText(bottomString);

@@ -7,9 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitApi {
 
-    private static final String SERVER_IP = "http://192.168.0.102:8081";
+    private static final String SERVER_IP = "http://10.9.49.209:8081";
 
-    private static Retrofit retrofit;
     private static Api api;
 
     static {
@@ -18,7 +17,7 @@ public class RetrofitApi {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .build();
-        retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(SERVER_IP)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -28,10 +27,6 @@ public class RetrofitApi {
 
     private RetrofitApi() {
 
-    }
-
-    public static Retrofit getRetrofit() {
-        return retrofit;
     }
 
     public static Api getApi() {

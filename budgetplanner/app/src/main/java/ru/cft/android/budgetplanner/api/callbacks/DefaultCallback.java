@@ -24,7 +24,7 @@ public class DefaultCallback implements Callback<Month> {
     public void onResponse(@NonNull Call<Month> call, @NonNull Response<Month> response) {
         Month month = response.body();
         if (month == null) {
-            ViewUtils.showDefaultErrorDialog( activity, new QueryException("Response is null"));
+            ViewUtils.showDefaultErrorDialog(activity, new QueryException("Response is null"));
         } else {
             callbackResponseListener.run(month);
         }
@@ -32,6 +32,6 @@ public class DefaultCallback implements Callback<Month> {
 
     @Override
     public void onFailure(@NonNull Call<Month> call, @NonNull Throwable t) {
-        ViewUtils.showDefaultErrorDialog( activity, t);
+        ViewUtils.showDefaultErrorDialog(activity, t);
     }
 }
