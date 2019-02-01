@@ -92,7 +92,7 @@ public class CategoryActivity extends Activity {
         }
         int readBalance = Integer.parseInt(editTextEditBalanceInCurrentCategory.getText().toString());
         editTextEditBalanceInCurrentCategory.setText("");
-        if (readBalance > notDistributedBalance) {
+        if (readBalance > notDistributedBalance + balance) {
             displayNotCorrectNewBalanceAlert();
             return;
         }
