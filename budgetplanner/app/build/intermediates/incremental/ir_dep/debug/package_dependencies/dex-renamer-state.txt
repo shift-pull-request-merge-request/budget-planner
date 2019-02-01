@@ -1,4 +1,0 @@
-#Fri Feb 01 15:47:33 NOVT 2019
-base.0=C\:\\Users\\79231\\Desktop\\budget-planner\\budgetplanner\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
-path.0=classes.dex
-renamed.0=classes.dex
